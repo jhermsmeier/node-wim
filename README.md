@@ -20,3 +20,56 @@ $ npm install --save wim
 ```js
 var WIM = require( 'wim' )
 ```
+
+### Read a WIM header
+
+```js
+var image = new WIM.Image()
+
+image.open( 'sources.wim', function( error ) {
+  if( error ) return handleError( error )
+  image.readHeader( function( error, header ) {
+    console.log( header )
+  })
+})
+```
+
+```js
+Header {
+  imageTag: 'MSWIM\u0000\u0000\u0000',
+  size: 208,
+  version: 68864,
+  flags: 262274,
+  compressedSize: 32768,
+  guid: <Buffer 29 f7 36 06 03 77 e4 41 96 f8 1b b8 69 fd 49 7d>,
+  partNumber: 1,
+  partCount: 1,
+  imageCount: 2,
+  offsetTable: FileHeader {
+     size: 461850,
+     flags: 2,
+     offset: 307668199,
+     originalSize: 461850
+  },
+  xmlData: FileHeader {
+    size: 3824,
+    flags: 2,
+    offset: 308130049,
+    originalSize: 3824
+  },
+  bootMetadata: FileHeader {
+     size: 920042,
+     flags: 6,
+     offset: 306748157,
+     originalSize: 4555704
+  },
+  bootIndex: 2,
+  integrity: FileHeader {
+    size: 0,
+    flags: 0,
+    offset: 0,
+    originalSize: 0
+  },
+  reserved: <Buffer 00 00 00 00 00 00 00 00 00 00 00 00 00  ... >
+}
+```
