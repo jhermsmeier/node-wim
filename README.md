@@ -10,4 +10,13 @@
 $ npm install --save wim
 ```
 
+## References
+
+- [Windows Imaging File Format on TechNet](https://technet.microsoft.com/en-us/library/cc749478(v=ws.10).aspx)
+- [Windows Imaging File Format (WIM) white paper](http://go.microsoft.com/fwlink/?LinkId=92227)
+
 ## Usage
+
+```js
+var WIM = require( 'wim' )
+```
