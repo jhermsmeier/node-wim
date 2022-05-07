@@ -73,3 +73,20 @@ Header {
   reserved: <Buffer 00 00 00 00 00 00 00 00 00 00 00 00 00  ... >
 }
 ```
+
+### CLI Usage
+```
+npx wim wimfile -h|-x|-m
+  dump wimfile header, xml data or metadata
+```
+
+### CLI - read version from windows installation ISO 
+
+ISO mount on filesystem is Linux-specific here.
+
+```
+mount win10.iso /mnt/win10/ -o loop
+npx wim /mnt/win10/sources/install.wim -x | npx --package @toycode/xml2json-cli xml2json | jq -r .WIM.IMAGE[0].WINDOWS[0].SERVICINGDATA[0].PKEYCONFIGVERSION[0]
+```
+
+You get `10.0.19041.1202;2016-01-01T00:00:00Z` for instance.
