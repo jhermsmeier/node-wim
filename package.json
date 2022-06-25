@@ -1,6 +1,6 @@
 {
   "name": "wim",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "Windows Imaging File Format (WIM)",
   "license": "MIT",
   "author": "Jonas Hermsmeier <jhermsmeier@gmail.com> (https://jhermsmeier.de)",
