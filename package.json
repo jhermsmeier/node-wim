@@ -33,8 +33,6 @@
   },
   "scripts": {
     "test": "mocha",
-    "preversion": "npm test",
-    "version": "npm run changelog && git add CHANGELOG.md",
-    "changelog": "conventional-changelog --preset angular --same-file --infile CHANGELOG.md --release-count 0"
+    "preversion": "npm test"
   }
 }
